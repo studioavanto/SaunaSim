@@ -1,0 +1,203 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Art/Sauna_empty.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/SaunaTemp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/placeholder/QuestionButton.png" type="Texture" id=4]
+[ext_resource path="res://Art/Sauna_PC.png" type="Texture" id=5]
+[ext_resource path="res://Art/placeholder/SilentButton.png" type="Texture" id=6]
+[ext_resource path="res://Art/placeholder/AnswerButton.png" type="Texture" id=7]
+[ext_resource path="res://Art/placeholder/StartScreen.png" type="Texture" id=8]
+[ext_resource path="res://Art/placeholder/EndScreen.png" type="Texture" id=9]
+[ext_resource path="res://Art/Sauna_kiuas1.png" type="Texture" id=10]
+[ext_resource path="res://Art/Sauna_kiuas2.png" type="Texture" id=11]
+[ext_resource path="res://Art/Sauna_kiuas3.png" type="Texture" id=12]
+[ext_resource path="res://Art/Sauna_oviauki.png" type="Texture" id=13]
+[ext_resource path="res://Art/Sauna_ovikiinni.png" type="Texture" id=14]
+[ext_resource path="res://Art/Sauna_Ikkuna-ilta.png" type="Texture" id=15]
+[ext_resource path="res://Art/Sauna_ikkuna-yo.png" type="Texture" id=16]
+[ext_resource path="res://Art/Sauna_Ikkuna-iltayo.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Sanko.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Art/Sauna_PC-loyl.png" type="Texture" id=20]
+[ext_resource path="res://Art/Sauna_PC-walk2.png" type="Texture" id=21]
+[ext_resource path="res://Art/Sauna_PC-walk3.png" type="Texture" id=22]
+[ext_resource path="res://Art/Sauna_PC-walk4.png" type="Texture" id=23]
+[ext_resource path="res://Art/Sauna_PC-walk1.png" type="Texture" id=24]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "loyl",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "kiinni",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "auki",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "ilta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "iltayo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "yo",
+"speed": 5.0
+} ]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+loyly_warm_speed = 0.005
+
+[node name="SaunaImage" type="Sprite" parent="."]
+z_index = -2
+texture = ExtResource( 2 )
+
+[node name="Pelaaja" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+
+[node name="Sanko" parent="." instance=ExtResource( 18 )]
+
+[node name="Kamiina" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="Door" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "kiinni"
+
+[node name="Ikkuna" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "ilta"
+
+[node name="LoylyTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GameClock" type="Timer" parent="."]
+
+[node name="SaunaTemp" parent="." instance=ExtResource( 3 )]
+position = Vector2( -843.255, -431.973 )
+
+[node name="PositiveButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 426.104
+margin_top = 419.556
+margin_right = 578.104
+margin_bottom = 554.556
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NegativeButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 586.758
+margin_top = 422.196
+margin_right = 738.758
+margin_bottom = 557.196
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SilentButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 757.932
+margin_top = 421.015
+margin_right = 909.932
+margin_bottom = 556.015
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seat1Place" type="Node2D" parent="."]
+position = Vector2( -22, 0 )
+
+[node name="Seat2Place" type="Node2D" parent="."]
+position = Vector2( 22, 0 )
+
+[node name="Walk1Place" type="Node2D" parent="."]
+position = Vector2( -22, 0 )
+
+[node name="Walk2Place" type="Node2D" parent="."]
+position = Vector2( 22, 0 )
+
+[node name="StartPos" type="Node2D" parent="."]
+position = Vector2( -150, 0 )
+
+[node name="AnswerTween" type="Tween" parent="."]
+
+[node name="STransitionTween" type="Tween" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="StartScreen" type="TextureRect" parent="."]
+margin_left = 135.302
+margin_top = -708.41
+margin_right = 1287.3
+margin_bottom = -60.4097
+mouse_filter = 2
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndScreen" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.167
+margin_top = -713.166
+margin_right = 1280.17
+margin_bottom = -65.1664
+mouse_filter = 2
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.2, 0.2 )
+
+[node name="CharacterEnterTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="pressed" from="PositiveButton" to="." method="positive_response"]
+[connection signal="pressed" from="NegativeButton" to="." method="negative_response"]
+[connection signal="pressed" from="SilentButton" to="." method="silent_response"]

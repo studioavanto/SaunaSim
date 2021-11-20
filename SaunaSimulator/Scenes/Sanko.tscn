@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/SankoHighlight.gd" type="Script" id=1]
+[ext_resource path="res://Art/Sauna_kiulu-kauhalla-highlighted_1.png" type="Texture" id=2]
+[ext_resource path="res://Art/Sauna_kiulu-eikauhaa.png" type="Texture" id=3]
+[ext_resource path="res://Art/Sauna_kiulu-kauhalla-highlighted.png" type="Texture" id=4]
+[ext_resource path="res://Art/Sauna_kiulu-kauhalla.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "kauha",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "eikauha",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "kauha",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "eikauha",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = SubResource( 8 )
+
+[node name="Sanko" type="AnimatedSprite"]
+frames = SubResource( 4 )
+animation = "kauha"
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 67.011, 24.8974 )
+shape = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Highlight" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+frames = SubResource( 7 )
+animation = "kauha"
+
+[node name="HelpText" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 68.3354
+margin_top = 9.2703
+margin_right = 268.335
+margin_bottom = 49.2703
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/mono_font = SubResource( 9 )
+text = "Click to throw Löyly"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="Area2D" to="." method="mouse_enter"]
+[connection signal="mouse_exited" from="Area2D" to="." method="mouse_exit"]
