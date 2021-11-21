@@ -130,6 +130,9 @@ func start_dialogue():
 	if dialogues_done == dialogue_max and comfort >= long_dialogue_comfort:
 		current_dialogue = long_dialogue_id
 	else:
+		if len(has_not_spoken) == 0:
+			return
+
 		var random_id = randi() % len(has_not_spoken)
 		current_dialogue = has_not_spoken[random_id]
 		has_not_spoken.remove(random_id)
@@ -151,6 +154,7 @@ func continue_dialogue():
 	create_next_dialogue()
 
 func create_next_dialogue():
+	print("create new")
 	var dialogue_text = dialogues[current_dialogue][text_id]["text"]
 	create_speech_bubble(dialogue_text, dialogue_time)
 	

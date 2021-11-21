@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sauna_empty.png" type="Texture" id=2]
@@ -33,6 +33,15 @@
 [ext_resource path="res://Sounds/SaunaSaunds.wav" type="AudioStream" id=31]
 [ext_resource path="res://Scripts/AudioManager.gd" type="Script" id=32]
 [ext_resource path="res://Sounds/loyl.wav" type="AudioStream" id=33]
+[ext_resource path="res://Art/plus.png" type="Texture" id=34]
+[ext_resource path="res://Art/minus.png" type="Texture" id=35]
+[ext_resource path="res://Art/silent.png" type="Texture" id=36]
+[ext_resource path="res://Scripts/AnswerButton.gd" type="Script" id=37]
+[ext_resource path="res://Scripts/NegativeButton.gd" type="Script" id=38]
+[ext_resource path="res://Scripts/SilentButton.gd" type="Script" id=39]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6.03173, 5.73652 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -97,6 +106,17 @@ extents = Vector2( 19.9721, 20.7524 )
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 loyly_warm_speed = 0.005
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -150.785
+margin_top = -85.5262
+margin_right = -50.7846
+margin_bottom = -45.5262
+rect_scale = Vector2( 0.2, 0.2 )
+text = "Press q to quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Hoyryt" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0.588235 )
@@ -179,13 +199,48 @@ texture = ExtResource( 28 )
 script = ExtResource( 25 )
 
 [node name="Ajatus" type="Sprite" parent="."]
-position = Vector2( 59.7036, -48.3515 )
 
 [node name="PositiveButton" type="Area2D" parent="Ajatus"]
+script = ExtResource( 37 )
+
+[node name="Sprite" type="Sprite" parent="Ajatus/PositiveButton"]
+modulate = Color( 1, 1, 1, 0 )
+z_index = 3
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ajatus/PositiveButton"]
+position = Vector2( 44.0007, -64.2172 )
+shape = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="Ajatus/PositiveButton"]
 
 [node name="NegativeButton" type="Area2D" parent="Ajatus"]
+script = ExtResource( 38 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ajatus/NegativeButton"]
+position = Vector2( 59.163, -64.5145 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Ajatus/NegativeButton"]
+modulate = Color( 1, 1, 1, 0 )
+z_index = 3
+texture = ExtResource( 35 )
+
+[node name="Tween" type="Tween" parent="Ajatus/NegativeButton"]
 
 [node name="SilentButton" type="Area2D" parent="Ajatus"]
+script = ExtResource( 39 )
+
+[node name="Sprite" type="Sprite" parent="Ajatus/SilentButton"]
+modulate = Color( 1, 1, 1, 0 )
+z_index = 3
+texture = ExtResource( 36 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ajatus/SilentButton"]
+position = Vector2( 74.3254, -64.5145 )
+shape = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="Ajatus/SilentButton"]
 
 [node name="SaunaImage" type="Sprite" parent="."]
 z_index = -2
@@ -198,7 +253,7 @@ frames = SubResource( 1 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
@@ -250,6 +305,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="PelaajaSeat" type="Node2D" parent="."]
+position = Vector2( 22, 0 )
+
 [node name="Seat1Place" type="Node2D" parent="."]
 position = Vector2( -22, 0 )
 
@@ -262,6 +320,9 @@ position = Vector2( -22, 0 )
 [node name="Walk2Place" type="Node2D" parent="."]
 position = Vector2( 22, 0 )
 
+[node name="PelaajaPlace" type="Node2D" parent="."]
+position = Vector2( 54.0917, -0.471939 )
+
 [node name="StartPos" type="Node2D" parent="."]
 position = Vector2( -178.316, 0.471939 )
 
@@ -272,10 +333,10 @@ position = Vector2( -178.316, 0.471939 )
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="StartScreen" type="TextureRect" parent="."]
-margin_left = 135.302
-margin_top = -708.41
-margin_right = 1287.3
-margin_bottom = -60.4097
+margin_left = -426.326
+margin_top = -162.618
+margin_right = 725.674
+margin_bottom = 485.382
 mouse_filter = 2
 texture = ExtResource( 8 )
 __meta__ = {
@@ -284,10 +345,10 @@ __meta__ = {
 
 [node name="EndScreen" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 128.167
-margin_top = -713.166
-margin_right = 1280.17
-margin_bottom = -65.1664
+margin_left = -508.614
+margin_top = -278.657
+margin_right = 643.389
+margin_bottom = 369.343
 mouse_filter = 2
 texture = ExtResource( 9 )
 __meta__ = {
@@ -297,7 +358,7 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0.420441, 0 )
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.205, 0.205 )
 
 [node name="CharacterEnterTimer" type="Timer" parent="."]
 wait_time = 30.0
@@ -320,14 +381,24 @@ stream = ExtResource( 33 )
 [node name="DoorOpenZone" type="Area2D" parent="."]
 position = Vector2( -157.627, 67.959 )
 input_pickable = false
-monitorable = false
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorOpenZone"]
 position = Vector2( 11.7984, 0.471939 )
+scale = Vector2( 1.37307, 0.812817 )
 shape = SubResource( 5 )
 
+[connection signal="mouse_entered" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_enter"]
+[connection signal="mouse_exited" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_exit"]
+[connection signal="mouse_entered" from="Ajatus/NegativeButton" to="Ajatus/NegativeButton" method="mouse_enter"]
+[connection signal="mouse_exited" from="Ajatus/NegativeButton" to="Ajatus/NegativeButton" method="mouse_exit"]
+[connection signal="mouse_entered" from="Ajatus/SilentButton" to="Ajatus/SilentButton" method="mouse_enter"]
+[connection signal="mouse_exited" from="Ajatus/SilentButton" to="Ajatus/SilentButton" method="mouse_exit"]
 [connection signal="pressed" from="PositiveButton" to="." method="positive_response"]
 [connection signal="pressed" from="NegativeButton" to="." method="negative_response"]
 [connection signal="pressed" from="SilentButton" to="." method="silent_response"]
 [connection signal="area_entered" from="DoorOpenZone" to="." method="open_door"]
 [connection signal="area_exited" from="DoorOpenZone" to="." method="close_door"]
+[connection signal="area_shape_entered" from="DoorOpenZone" to="." method="open_door"]
+[connection signal="area_shape_exited" from="DoorOpenZone" to="." method="close_door"]

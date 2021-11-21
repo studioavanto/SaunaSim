@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sauna_Select.wav-133374ea61709171fe451d9ac68c43d7.sample"
+
+[deps]
+
+source_file="res://Sounds/Sauna_Select.wav"
+dest_files=[ "res://.import/Sauna_Select.wav-133374ea61709171fe451d9ac68c43d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

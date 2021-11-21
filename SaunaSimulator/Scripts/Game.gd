@@ -17,17 +17,21 @@ var min_temperature = 0.0
 var current_temperature = 0.5
 var on_going_loyly = false
 
+var intro_character = false
 var available_characters = []
 var seat_1 = null
 var seat_2 = null
 var used_characters = []
 
+var door_open = true
 var chosen_answer = 2
 
 var sauna_characters = [
-	preload("res://Scenes/Characters/TestChar1.tscn"),
-	preload("res://Scenes/Characters/TestChar1.tscn"),
-	preload("res://Scenes/Characters/TestChar1.tscn")
+	preload("res://Scenes/Characters/IntroCharacter.tscn"),
+	preload("res://Scenes/Characters/Character1.tscn"),
+	preload("res://Scenes/Characters/Character2.tscn"),
+	preload("res://Scenes/Characters/Character3.tscn"),
+	preload("res://Scenes/Characters/Character4.tscn")
 ]
 
 enum GameState{
@@ -44,11 +48,11 @@ func _ready():
 	randomize()
 
 func open_door():
-	print("auki")
+	door_open = true
 	$Door.animation = "auki"
 
 func close_door():
-	print("kiinni")
+	door_open = false
 	$Door.animation = "kiinni"
 
 func characters_can_enter():
@@ -66,6 +70,7 @@ func clear_characters():
 	for character in $Characters.get_children():
 		character.queue_free()
 
+	intro_character = false
 	available_characters.clear()
 	used_characters.clear()
 	seat_1 = null
@@ -77,90 +82,26 @@ func give_dialogue_response(response):
 	else:
 		seat_2.give_response(response)
 
-func positive_response():
-	give_dialogue_response("positive")
-
-func negative_response():
-	give_dialogue_response("negative")
-
-func silent_response():
-	give_dialogue_response("silent")
+func give_response(response):
+	give_dialogue_response(response)
 
 func start_conversation():
-	$AnswerTween.interpolate_property(
-		$AnswerButton,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-	$AnswerTween.interpolate_property(
-		$SilentButton,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-	$AnswerTween.interpolate_property(
-		$QuestionButton,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-
-	$AnswerTween.start()
-	$PositiveButton.disabled = false
-	$NegativeButton.disabled = false
-	$SilentButton.disabled = false
-
-func hide_conversation():
-	$AnswerTween.interpolate_property(
-		$AnswerButton,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-	$AnswerTween.interpolate_property(
-		$SilentButton,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-	$AnswerTween.interpolate_property(
-		$QuestionButton,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-
-	$AnswerTween.start()
-	$PositiveButton.disabled = true
-	$NegativeButton.disabled = true
-	$SilentButton.disabled = true
+	$Ajatus/NegativeButton.set_disabled(false)
+	$Ajatus/PositiveButton.set_disabled(false)
+	$Ajatus/SilentButton.set_disabled(false)
 	
+func hide_conversation():
+	$Ajatus/NegativeButton.set_disabled(true)
+	$Ajatus/PositiveButton.set_disabled(true)
+	$Ajatus/SilentButton.set_disabled(true)
+
 func throw_loyly():
 	$Pelaaja.animation = "loyl"
 	$Sanko.animation = "eikauha"
 	$Sanko/Highlight.animation = "eikauha"
 	play_audio("loyly")
 	
-	$Sanko.disable_button = false
+	$Sanko.disable_button = true
 	on_going_loyly = true
 	$LoylyTimer.start(loyly_length)
 
@@ -267,12 +208,24 @@ func is_someone_speaking():
 func seats_left():
 	return seat_1 == null or seat_2 == null
 
+func anyone_sitting():
+	return not (seat_1 == null and seat_2 == null)
+
 func character_enters_on_seat(walk_pos, seat_pos):
 	if available_characters.size() == 0:
-		return
+		if anyone_sitting():
+			game_over()
+		else:
+			return
 
-	var char_id = randi() % available_characters.size()
-	var new_char = available_characters[char_id]
+	var char_id = 0
+	var new_char = null
+	
+	if intro_character:
+		char_id = randi() % available_characters.size()
+		new_char = available_characters[char_id]
+	else:
+		new_char = available_characters[char_id]
 
 	available_characters.remove(char_id)
 	new_char.enter_sauna(walk_pos, seat_pos)
@@ -340,6 +293,13 @@ func _input(event):
 		quit_game()
 
 func _physics_process(delta):
+	if not $DoorOpenZone.get_overlapping_areas().empty():
+		if not door_open:
+			open_door()
+	else:
+		if door_open:
+			close_door()
+
 	if on_going_loyly:
 		current_temperature += loyly_warm_speed
 	else:

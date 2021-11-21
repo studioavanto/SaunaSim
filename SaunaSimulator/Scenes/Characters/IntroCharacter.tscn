@@ -23,9 +23,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10.5334, 10 )
 
-[node name="TestChar1" type="Node2D"]
+[node name="IntroCharacer" type="Node2D"]
 script = ExtResource( 2 )
-character_file_name = "test_character.txt"
+character_file_name = "intro.txt"
 
 [node name="SpeechTimer" type="Timer" parent="."]
 one_shot = true
