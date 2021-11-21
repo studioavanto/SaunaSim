@@ -45,10 +45,10 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 7.0
-margin_top = 16.0
-margin_right = 176.0
-margin_bottom = 101.0
+margin_left = -7.0
+margin_top = 30.0
+margin_right = 162.0
+margin_bottom = 115.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 4

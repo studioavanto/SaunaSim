@@ -7,45 +7,53 @@
 [ext_resource path="res://Art/Sauna_NPC2-walk3.png" type="Texture" id=5]
 [ext_resource path="res://Art/Sauna_NPC2.png" type="Texture" id=6]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 320, 180 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 320, 180 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 320, 180 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 320, 180 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 320, 180 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "sit",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "walk",
 "speed": 4.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 10.5334, 10 )
 
 [node name="TestChar1" type="Node2D"]
 script = ExtResource( 2 )
 character_file_name = "character2.txt"
+comfort_limit = -5
+max_time_in_wrong_temp = 3
+min_temp = 0.3
+max_temp = 0.75
+temp_comment_probability = 0.6
+long_dialogue_comfort = 1
+bad_ending_comfort_limit = -1
+good_ending_comfort_limit = 1
 
 [node name="SpeechTimer" type="Timer" parent="."]
 one_shot = true
@@ -54,9 +62,9 @@ one_shot = true
 one_shot = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 6 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -67,4 +75,4 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.943878, -5.66324 )
-shape = SubResource( 2 )
+shape = SubResource( 7 )

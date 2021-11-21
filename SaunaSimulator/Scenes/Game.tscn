@@ -256,7 +256,6 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 2
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
@@ -336,8 +335,8 @@ position = Vector2( -178.316, 0.471939 )
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="StartScreen" type="TextureRect" parent="."]
-margin_left = -426.326
-margin_top = -162.618
+margin_left = -160.0
+margin_top = -90.0
 margin_right = 725.674
 margin_bottom = 485.382
 mouse_filter = 2
