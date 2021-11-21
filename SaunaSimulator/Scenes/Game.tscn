@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sauna_empty.png" type="Texture" id=2]
@@ -18,53 +18,68 @@
 [ext_resource path="res://Art/Sauna_ikkuna-yo.png" type="Texture" id=16]
 [ext_resource path="res://Art/Sauna_Ikkuna-iltayo.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Sanko.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Art/hoyry_1.png" type="Texture" id=19]
 [ext_resource path="res://Art/Sauna_PC-loyl.png" type="Texture" id=20]
 [ext_resource path="res://Art/Sauna_PC-walk2.png" type="Texture" id=21]
 [ext_resource path="res://Art/Sauna_PC-walk3.png" type="Texture" id=22]
 [ext_resource path="res://Art/Sauna_PC-walk4.png" type="Texture" id=23]
 [ext_resource path="res://Art/Sauna_PC-walk1.png" type="Texture" id=24]
+[ext_resource path="res://Scripts/Hoyry.gd" type="Script" id=25]
+[ext_resource path="res://Art/hoyry_2.png" type="Texture" id=26]
+[ext_resource path="res://Art/hoyry_4.png" type="Texture" id=27]
+[ext_resource path="res://Art/hoyry_6.png" type="Texture" id=28]
+[ext_resource path="res://Art/hoyry_5.png" type="Texture" id=29]
+[ext_resource path="res://Art/hoyry_3.png" type="Texture" id=30]
+[ext_resource path="res://Sounds/SaunaSaunds.wav" type="AudioStream" id=31]
+[ext_resource path="res://Scripts/AudioManager.gd" type="Script" id=32]
+[ext_resource path="res://Sounds/loyl.wav" type="AudioStream" id=33]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "loyl",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+}, {
+"frames": [ ExtResource( 20 ) ],
 "loop": true,
-"name": "default",
+"name": "loyl",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "kiinni",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "auki",
-"speed": 5.0
+"name": "default",
+"speed": 3.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "auki",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "kiinni",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "yo",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "ilta",
@@ -74,35 +89,124 @@ animations = [ {
 "loop": true,
 "name": "iltayo",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "yo",
-"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 19.9721, 20.7524 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 loyly_warm_speed = 0.005
+
+[node name="Hoyryt" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+
+[node name="Hoyry_1" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.8125, 0.8125, 0.8125, 0.745098 )
+position = Vector2( -32.795, -40.363 )
+z_index = 1
+texture = ExtResource( 19 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_11" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.8125, 0.8125, 0.8125, 0.745098 )
+position = Vector2( 8.40897, -28.5905 )
+z_index = 1
+texture = ExtResource( 19 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_2" type="Sprite" parent="Hoyryt"]
+modulate = Color( 1, 1, 1, 0.745098 )
+position = Vector2( -74.8398, -41.6244 )
+z_index = 1
+texture = ExtResource( 26 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_3" type="Sprite" parent="Hoyryt"]
+modulate = Color( 1, 1, 1, 0.745098 )
+position = Vector2( 44.5675, -36.1585 )
+z_index = 1
+texture = ExtResource( 30 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_10" type="Sprite" parent="Hoyryt"]
+modulate = Color( 1, 1, 1, 0.745098 )
+position = Vector2( 94.6009, -25.6473 )
+z_index = 1
+texture = ExtResource( 30 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_8" type="Sprite" parent="Hoyryt"]
+modulate = Color( 1, 1, 1, 0.745098 )
+position = Vector2( -74.4193, -51.7151 )
+z_index = 1
+texture = ExtResource( 30 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_4" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.933594, 0.933594, 0.933594, 0.745098 )
+position = Vector2( 36.579, -49.1924 )
+z_index = 1
+texture = ExtResource( 27 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_9" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.933594, 0.933594, 0.933594, 0.745098 )
+position = Vector2( 17.2384, -56.7605 )
+z_index = 1
+texture = ExtResource( 27 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_5" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 0.784314 )
+position = Vector2( -57.6014, -31.1132 )
+z_index = 1
+texture = ExtResource( 29 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_7" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.87451, 0.87451, 0.87451, 0.784314 )
+position = Vector2( -33.6359, -58.0219 )
+z_index = 1
+texture = ExtResource( 29 )
+script = ExtResource( 25 )
+
+[node name="Hoyry_6" type="Sprite" parent="Hoyryt"]
+modulate = Color( 0.803922, 0.803922, 0.803922, 0.745098 )
+position = Vector2( 64.3286, -56.3401 )
+z_index = 1
+texture = ExtResource( 28 )
+script = ExtResource( 25 )
+
+[node name="Ajatus" type="Sprite" parent="."]
+position = Vector2( 59.7036, -48.3515 )
+
+[node name="PositiveButton" type="Area2D" parent="Ajatus"]
+
+[node name="NegativeButton" type="Area2D" parent="Ajatus"]
+
+[node name="SilentButton" type="Area2D" parent="Ajatus"]
 
 [node name="SaunaImage" type="Sprite" parent="."]
 z_index = -2
 texture = ExtResource( 2 )
 
 [node name="Pelaaja" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
+frames = SubResource( 1 )
 
 [node name="Sanko" parent="." instance=ExtResource( 18 )]
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "kiinni"
 
 [node name="Ikkuna" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 animation = "ilta"
 
 [node name="LoylyTimer" type="Timer" parent="."]
@@ -115,10 +219,10 @@ position = Vector2( -843.255, -431.973 )
 
 [node name="PositiveButton" type="TextureButton" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 426.104
-margin_top = 419.556
-margin_right = 578.104
-margin_bottom = 554.556
+margin_left = 180.087
+margin_top = -96.0061
+margin_right = 332.087
+margin_bottom = 38.9939
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,10 +230,10 @@ __meta__ = {
 
 [node name="NegativeButton" type="TextureButton" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 586.758
-margin_top = 422.196
-margin_right = 738.758
-margin_bottom = 557.196
+margin_left = 284.44
+margin_top = 63.5005
+margin_right = 436.44
+margin_bottom = 198.5
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,10 +241,10 @@ __meta__ = {
 
 [node name="SilentButton" type="TextureButton" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 757.932
-margin_top = 421.015
-margin_right = 909.932
-margin_bottom = 556.015
+margin_left = 181.257
+margin_top = -189.411
+margin_right = 333.257
+margin_bottom = -54.4106
 texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -159,7 +263,7 @@ position = Vector2( -22, 0 )
 position = Vector2( 22, 0 )
 
 [node name="StartPos" type="Node2D" parent="."]
-position = Vector2( -150, 0 )
+position = Vector2( -178.316, 0.471939 )
 
 [node name="AnswerTween" type="Tween" parent="."]
 
@@ -191,13 +295,39 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0.420441, 0 )
 current = true
-zoom = Vector2( 0.2, 0.2 )
+zoom = Vector2( 0.4, 0.4 )
 
 [node name="CharacterEnterTimer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
 
+[node name="AudioManager" type="Node2D" parent="."]
+script = ExtResource( 32 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource( 31 )
+autoplay = true
+
+[node name="CharacterAudio" type="AudioStreamPlayer2D" parent="AudioManager"]
+
+[node name="LoylyAudio" type="AudioStreamPlayer2D" parent="AudioManager"]
+stream = ExtResource( 33 )
+
+[node name="OtherAudio" type="AudioStreamPlayer2D" parent="AudioManager"]
+
+[node name="DoorOpenZone" type="Area2D" parent="."]
+position = Vector2( -157.627, 67.959 )
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorOpenZone"]
+position = Vector2( 11.7984, 0.471939 )
+shape = SubResource( 5 )
+
 [connection signal="pressed" from="PositiveButton" to="." method="positive_response"]
 [connection signal="pressed" from="NegativeButton" to="." method="negative_response"]
 [connection signal="pressed" from="SilentButton" to="." method="silent_response"]
+[connection signal="area_entered" from="DoorOpenZone" to="." method="open_door"]
+[connection signal="area_exited" from="DoorOpenZone" to="." method="close_door"]

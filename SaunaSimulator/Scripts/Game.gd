@@ -40,7 +40,16 @@ func _ready():
 	$LoylyTimer.connect("timeout", self, "stop_loyly")
 	$GameClock.connect("timeout", self, "time_proceeds")
 	$CharacterEnterTimer.connect("timeout", self, "characters_can_enter")
+
 	randomize()
+
+func open_door():
+	print("auki")
+	$Door.animation = "auki"
+
+func close_door():
+	print("kiinni")
+	$Door.animation = "kiinni"
 
 func characters_can_enter():
 	can_character_enter = true
@@ -149,10 +158,14 @@ func throw_loyly():
 	$Pelaaja.animation = "loyl"
 	$Sanko.animation = "eikauha"
 	$Sanko/Highlight.animation = "eikauha"
+	play_audio("loyly")
 	
 	$Sanko.disable_button = false
 	on_going_loyly = true
 	$LoylyTimer.start(loyly_length)
+
+func play_audio(audio_id):
+	$AudioManager.play_audio(audio_id)
 
 func stop_loyly():
 	on_going_loyly = false
@@ -263,6 +276,7 @@ func character_enters_on_seat(walk_pos, seat_pos):
 
 	available_characters.remove(char_id)
 	new_char.enter_sauna(walk_pos, seat_pos)
+	
 	return new_char
 
 func continue_scene():
@@ -315,6 +329,10 @@ func fade_in_end_screen():
 	
 	$STransitionTween.start()
 
+func set_hoyry_level():
+	var opacity = max((current_temperature - 0.2), 0.0)
+	$Hoyryt.modulate = Color(1.0, 1.0, 1.0, opacity)
+
 func _input(event):
 	if event.is_action_pressed("continue"):
 		continue_scene()
@@ -334,3 +352,4 @@ func _physics_process(delta):
 		current_temperature = min_temperature
 
 	$SaunaTemp.set_temperature(current_temperature)
+	set_hoyry_level()
