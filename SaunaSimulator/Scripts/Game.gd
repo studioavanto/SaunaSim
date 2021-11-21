@@ -136,6 +136,7 @@ func quit_game():
 	get_tree().quit()
 
 	# Characters spend time
+func time_proceeds():
 	if seat_1 !=  null:
 		seat_1.spend_time(current_temperature)
 	if seat_2 !=  null:

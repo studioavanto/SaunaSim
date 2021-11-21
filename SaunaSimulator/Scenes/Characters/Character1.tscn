@@ -26,6 +26,8 @@ extents = Vector2( 10.5334, 10 )
 [node name="TestChar1" type="Node2D"]
 script = ExtResource( 2 )
 character_file_name = "test_character.txt"
+dialogue_time = 5
+max_time_in_wrong_temp = 1
 
 [node name="SpeechTimer" type="Timer" parent="."]
 one_shot = true

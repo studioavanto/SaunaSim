@@ -51,14 +51,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
 "name": "loyl",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -72,22 +72,22 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "auki",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "kiinni",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "auki",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 15 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "ilta",
+"name": "iltayo",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -95,9 +95,9 @@ animations = [ {
 "name": "yo",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "iltayo",
+"name": "ilta",
 "speed": 5.0
 } ]
 
@@ -256,7 +256,7 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]

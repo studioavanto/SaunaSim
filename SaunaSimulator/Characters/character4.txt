@@ -1,33 +1,35 @@
 {
 	"cold_reactions": [
-		"cold 1",
-		"Cold 2",
-		"cold 3"
+		"This ain't no freezer, pump it up!",
+		"Hey, man, what's the big idea?",
+		"Let's raise the heat!"
 	],
 	"hot_reactions": [
-		"warm 1",
-		"Warm 2",
-		"warm 3"
+		"Hnnngh, my eyeballs!",
+		"I feel like a Christmas ham. ",
+		"*Huff, puff, wheeze*"
 	],
 	"normal_reactions":[
-		"reaction 1",
-		"reaction 2",
-		"reactions 3"
+		"Mmm.",
+		"Oh yes.",
+		"Phew.",
+		"Thank you.",
+		"That's the stuff."
 	],
 	"exit_dialog": [
-		"I'll be leaving",
-		"good stuff",
-		"the bestest sauna!"
+		"I'm still cold.",
+		"That about does it.",
+		"Oh boy, I feel so relaxed."
 	],
 	"dialogues": {
 		"0": {
 			"0": {
-				"text":"test dialog for player",
+				"text":"I'm so tired.",
 				"comfort": 0,
 				"no_answer": false,
-				"positive": "1",
-				"negative": "2",
-				"silent": "3"
+				"positive": "2",
+				"negative": "3",
+				"silent": "4"
 			},
 			"1": {
 				"text":"Anwer for question",
@@ -38,19 +40,19 @@
 				"silent": "-1"
 			},
 			"2": {
-				"text":"Answer for answer",
-				"comfort": 0,
+				"text":"Yeah, you're right. Nothing a sauna can't fix. ",
+				"comfort": 2,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Answer for silent",
-				"comfort": 0,
+				"text":"It's just been one hell of a week. ",
+				"comfort": 4,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"4": {
-				"text":"Answer for second question",
+				"text":"Hmh, you too then?",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
@@ -58,12 +60,12 @@
 		},
 		"1": {
 			"0": {
-				"text":"test dialog for player nmb 2",
+				"text":"Oh, lordy, my back.",
 				"comfort": 0,
 				"no_answer": false,
-				"positive": "1",
-				"negative": "2",
-				"silent": "3"
+				"positive": "2",
+				"negative": "3",
+				"silent": "4"
 			},
 			"1": {
 				"text":"Anwer for question n2",
@@ -74,19 +76,19 @@
 				"silent": "-1"
 			},
 			"2": {
-				"text":"Answer for answer n2",
-				"comfort": 0,
+				"text":"Sauna's are like magic, but they always feel too short.",
+				"comfort": 3,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Answer for silent n2",
-				"comfort": 0,
+				"text":"Now it's time for a shower and a beer. That'll pick me up.",
+				"comfort": 2,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"4": {
-				"text":"Answer for second question n2",
+				"text":"You hang in there. It's tough out there.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
