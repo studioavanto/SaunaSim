@@ -82,6 +82,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "yo",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "iltayo",
@@ -90,11 +95,6 @@ animations = [ {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "ilta",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "yo",
 "speed": 5.0
 } ]
 
@@ -260,6 +260,7 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]

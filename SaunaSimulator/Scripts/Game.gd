@@ -285,9 +285,9 @@ func set_hoyry_level():
 	$Hoyryt.modulate = Color(1.0, 1.0, 1.0, opacity)
 
 func _physics_process(delta):
-	if Input.is_action_pressed("continue"):
+	if Input.is_action_just_pressed("continue"):
 		continue_scene()
-	if Input.is_action_pressed("quit"):
+	if Input.is_action_just_pressed("quit"):
 		quit_game()
 	
 	if not $DoorOpenZone.get_overlapping_areas().empty():

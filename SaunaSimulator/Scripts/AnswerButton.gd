@@ -39,7 +39,7 @@ func mouse_exit():
 func mouse_enter():
 	hover_mouse = true
 
-func _input(event):
-	if event.is_action_pressed("mouse_click") and hover_mouse and not disable_button:
+func _process(_delta):
+	if Input.is_action_just_pressed("mouse_click") and hover_mouse and not disable_button:
 		get_parent().get_parent().give_response(response_text)
 
