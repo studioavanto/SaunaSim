@@ -122,12 +122,6 @@ func get_temp_level():
 	else:
 		return 2
 
-func spend_time():
-	current_comfort -= 1
-	
-	if current_comfort == 0:
-		game_over()
-
 func game_over():
 	$GameClock.stop()
 	fade_in_end_screen()
@@ -140,9 +134,6 @@ func start_game():
 
 func quit_game():
 	get_tree().quit()
-
-func time_proceeds():
-	spend_time()
 
 	# Characters spend time
 	if seat_1 !=  null:

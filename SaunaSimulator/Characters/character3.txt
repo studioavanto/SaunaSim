@@ -1,28 +1,29 @@
 {
 	"cold_reactions": [
-		"cold 1",
-		"Cold 2",
-		"cold 3"
+		"Little warmer, please.",
+		"Our hair is freezing.",
+		"Don't worry about us, go on and throw."
 	],
 	"hot_reactions": [
-		"warm 1",
-		"Warm 2",
-		"warm 3"
+		"Pump the brakes!",
+		"Little less next time, OK?",
+		"How about, no?"
 	],
 	"normal_reactions":[
-		"reaction 1",
-		"reaction 2",
-		"reactions 3"
+		"I can't believe it's only Wednesday.",
+		"This was the right idea.",
+		"I love the smell of tar in the steam.",
+		"Mmm, that's nice."
 	],
 	"exit_dialog": [
-		"I'll be leaving",
-		"good stuff",
-		"the bestest sauna!"
+		"Well, bye.",
+		"Have a good one.",
+		"That was amazing, thanks!"
 	],
 	"dialogues": {
 		"0": {
 			"0": {
-				"text":"test dialog for player",
+				"text":"Don't mind us.",
 				"comfort": 0,
 				"no_answer": false,
 				"positive": "1",
@@ -30,22 +31,20 @@
 				"silent": "3"
 			},
 			"1": {
-				"text":"Anwer for question",
-				"comfort": 0,
-				"no_answer": false,
-				"positive": "4",
-				"negative": "2",
+				"text":"Nice to find some civilized sauna company.",
+				"comfort": 3,
+				"no_answer": true,
 				"silent": "-1"
 			},
 			"2": {
-				"text":"Answer for answer",
-				"comfort": 0,
+				"text":"It's so hard to find quality public saunas anymore.",
+				"comfort": 1,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Answer for silent",
-				"comfort": 0,
+				"text":"...",
+				"comfort": -2,
 				"no_answer": true,
 				"silent": "-1"
 			},
@@ -58,12 +57,12 @@
 		},
 		"1": {
 			"0": {
-				"text":"test dialog for player nmb 2",
+				"text":"We're gonna hit the showers.",
 				"comfort": 0,
 				"no_answer": false,
-				"positive": "1",
-				"negative": "2",
-				"silent": "3"
+				"positive": "2",
+				"negative": "3",
+				"silent": "4"
 			},
 			"1": {
 				"text":"Anwer for question n2",
@@ -74,20 +73,20 @@
 				"silent": "-1"
 			},
 			"2": {
-				"text":"Answer for answer n2",
-				"comfort": 0,
+				"text":"You're one of the good ones. Stay streets ahead.",
+				"comfort": 1,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Answer for silent n2",
-				"comfort": 0,
+				"text":"Still got plenty to do today.",
+				"comfort": 1,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"4": {
-				"text":"Answer for second question n2",
-				"comfort": 0,
+				"text":"...",
+				"comfort": -2,
 				"no_answer": true,
 				"silent": "-1"
 			},
