@@ -8,14 +8,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "eikauha",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "kauha",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "eikauha",
 "speed": 5.0
 } ]
 
@@ -23,14 +23,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "eikauha",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "kauha",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "eikauha",
 "speed": 5.0
 } ]
 
@@ -59,6 +59,7 @@ frames = SubResource( 3 )
 animation = "kauha"
 
 [node name="HelpText" type="RichTextLabel" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.3354
 margin_top = 9.2703

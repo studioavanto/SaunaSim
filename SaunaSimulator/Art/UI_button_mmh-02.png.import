@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EndScreen.png-596a7e96f508ca22e80e5851b468343c.stex"
+path="res://.import/UI_button_mmh-02.png-28975444c6381549adfcda047b9f83a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/placeholder/EndScreen.png"
-dest_files=[ "res://.import/EndScreen.png-596a7e96f508ca22e80e5851b468343c.stex" ]
+source_file="res://Art/UI_button_mmh-02.png"
+dest_files=[ "res://.import/UI_button_mmh-02.png-28975444c6381549adfcda047b9f83a3.stex" ]
 
 [params]
 

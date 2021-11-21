@@ -46,8 +46,6 @@ extents = Vector2( 10.5334, 10 )
 [node name="TestChar1" type="Node2D"]
 script = ExtResource( 2 )
 character_file_name = "character3.txt"
-dialogue_time = 5
-stay_silent_time = 2
 max_time_in_wrong_temp = 8
 
 [node name="SpeechTimer" type="Timer" parent="."]
@@ -59,7 +57,6 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "walk"
-frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
