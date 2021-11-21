@@ -35,10 +35,10 @@ __meta__ = {
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -159.75
-margin_top = -99.0
-margin_right = 90.25
-margin_bottom = 101.0
+margin_left = 783.118
+margin_top = 843.868
+margin_right = 1033.12
+margin_bottom = 1486.87
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,9 +46,9 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 7.0
-margin_top = 74.0
+margin_top = 296.0
 margin_right = 243.0
-margin_bottom = 125.0
+margin_bottom = 347.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 4
