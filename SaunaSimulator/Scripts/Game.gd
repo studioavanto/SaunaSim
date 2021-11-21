@@ -213,7 +213,7 @@ func anyone_sitting():
 
 func character_enters_on_seat(walk_pos, seat_pos):
 	if available_characters.size() == 0:
-		if anyone_sitting():
+		if not anyone_sitting():
 			game_over()
 		else:
 			return
