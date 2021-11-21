@@ -27,6 +27,7 @@ extents = Vector2( 10.5334, 10 )
 script = ExtResource( 2 )
 character_file_name = "intro.txt"
 dialogue_time = 5
+stay_silent_time = 3
 comfort_limit = -2
 max_time_in_wrong_temp = 6
 long_dialogue_comfort = 0

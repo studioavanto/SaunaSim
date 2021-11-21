@@ -33,7 +33,7 @@
 [ext_resource path="res://Sounds/SaunaSaunds.wav" type="AudioStream" id=31]
 [ext_resource path="res://Scripts/AudioManager.gd" type="Script" id=32]
 [ext_resource path="res://Sounds/loyl.wav" type="AudioStream" id=33]
-[ext_resource path="res://Art/plus.png" type="Texture" id=34]
+[ext_resource path="res://Art/UI_button_mmh-01.png" type="Texture" id=34]
 [ext_resource path="res://Art/minus.png" type="Texture" id=35]
 [ext_resource path="res://Art/silent.png" type="Texture" id=36]
 [ext_resource path="res://Scripts/AnswerButton.gd" type="Script" id=37]
@@ -335,6 +335,7 @@ position = Vector2( -178.316, 0.471939 )
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="StartScreen" type="TextureRect" parent="."]
+visible = false
 margin_left = -160.0
 margin_top = -90.0
 margin_right = 725.674
