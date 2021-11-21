@@ -1,6 +1,7 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://Art/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Art/Font/Press_Start_2P/PressStart2P-Regular.ttf"
 
 [resource]
-font_data = ExtResource( 1 )
+font_data = SubResource( 1 )

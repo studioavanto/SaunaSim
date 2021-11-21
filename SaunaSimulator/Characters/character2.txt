@@ -33,7 +33,7 @@
 			"1": {
 				"text":"Yeah, gotta get that work week off your back with some steam.",
 				"comfort": 2,
-				"no_answer": false,
+				"no_answer": true,
 				"silent": "-1"
 			},
 			"2": {

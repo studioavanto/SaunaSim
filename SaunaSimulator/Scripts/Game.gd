@@ -47,10 +47,12 @@ func _ready():
 	randomize()
 
 func open_door():
+	play_audio("door_open")
 	door_open = true
 	$Door.animation = "auki"
 
 func close_door():
+	play_audio("door_open")
 	door_open = false
 	$Door.animation = "kiinni"
 
@@ -76,12 +78,13 @@ func clear_characters():
 	seat_2 = null
 
 func give_dialogue_response(response):
-	if seat_1.speaking:
+	if seat_1 != null and seat_1.speaking:
 		seat_1.give_response(response)
 	else:
 		seat_2.give_response(response)
 
 func give_response(response):
+	play_audio("ui_click")
 	give_dialogue_response(response)
 
 func start_conversation():
@@ -131,11 +134,11 @@ func start_game():
 	create_available_characters()
 	current_comfort = max_comfort
 	$GameClock.start()
+	play_audio("start_game")
 
 func quit_game():
 	get_tree().quit()
 
-	# Characters spend time
 func time_proceeds():
 	if seat_1 !=  null:
 		seat_1.spend_time(current_temperature)
@@ -165,6 +168,13 @@ func time_proceeds():
 			seat_1 = character_enters_on_seat($Walk1Place.position, $Seat1Place.position)
 		elif seat_2 == null:
 			seat_2 = character_enters_on_seat($Walk2Place.position, $Seat2Place.position)
+
+	# Game over check
+	if no_sitters() and available_characters.size() == 0:
+		game_over()
+
+func no_sitters():
+	return seat_1 == null and seat_2 == null
 
 func someone_sitting():
 	return seat_1 != null or seat_2 != null
@@ -204,10 +214,7 @@ func anyone_sitting():
 
 func character_enters_on_seat(walk_pos, seat_pos):
 	if available_characters.size() == 0:
-		if not anyone_sitting():
-			game_over()
-		else:
-			return
+		return
 
 	var char_id = 0
 	var new_char = null
@@ -277,13 +284,12 @@ func set_hoyry_level():
 	var opacity = max((current_temperature - 0.2), 0.0)
 	$Hoyryt.modulate = Color(1.0, 1.0, 1.0, opacity)
 
-func _input(event):
-	if event.is_action_pressed("continue"):
-		continue_scene()
-	if event.is_action_pressed("quit"):
-		quit_game()
-
 func _physics_process(delta):
+	if Input.is_action_pressed("continue"):
+		continue_scene()
+	if Input.is_action_pressed("quit"):
+		quit_game()
+	
 	if not $DoorOpenZone.get_overlapping_areas().empty():
 		if not door_open:
 			open_door()

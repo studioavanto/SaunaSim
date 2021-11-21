@@ -94,6 +94,8 @@ func enter_sauna(position, seat_pos):
 func exit_sauna(position):
 	z_index = 1
 	$AnimatedSprite.animation = "walk"
+	$AnimatedSprite.scale.x *= -1
+	$AnimatedSprite.position.x -= 100
 	current_state = CharacterState.MOVING
 	next_position = position
 	exiting = true
@@ -131,6 +133,7 @@ func start_dialogue():
 		current_dialogue = long_dialogue_id
 	else:
 		if len(has_not_spoken) == 0:
+			dialogues_done += 1
 			return
 
 		var random_id = randi() % len(has_not_spoken)
@@ -154,7 +157,6 @@ func continue_dialogue():
 	create_next_dialogue()
 
 func create_next_dialogue():
-	print("create new")
 	var dialogue_text = dialogues[current_dialogue][text_id]["text"]
 	create_speech_bubble(dialogue_text, dialogue_time)
 	
@@ -237,6 +239,7 @@ func destroy_bubble():
 func sit_on_bench():
 	z_index = 0
 	if exiting:
+		get_parent().get_parent().play_audio("sit_down")
 		current_state = CharacterState.NULL
 		get_parent().get_parent().character_has_exited(self)
 	else:

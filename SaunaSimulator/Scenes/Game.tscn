@@ -48,14 +48,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "loyl",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "loyl",
 "speed": 5.0
 } ]
 
@@ -99,20 +99,21 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 19.9721, 20.7524 )
+extents = Vector2( 8.6814, 18.5954 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 loyly_length = 2.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -150.785
-margin_top = -85.5262
-margin_right = 249.215
-margin_bottom = -45.5262
+margin_left = -151.0
+margin_top = -86.0
+margin_right = 657.0
+margin_bottom = -3.0
 rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
 custom_fonts/normal_font = ExtResource( 40 )
-text = "Press Q to quit"
+text = "Press Q to quit, click bucket to throw loyly"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -259,7 +260,6 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
@@ -308,8 +308,8 @@ position = Vector2( -178.316, 0.471939 )
 [node name="StartScreen" type="TextureRect" parent="."]
 margin_left = -160.0
 margin_top = -90.0
-margin_right = 725.674
-margin_bottom = 485.382
+margin_right = 160.0
+margin_bottom = 90.0
 mouse_filter = 2
 texture = ExtResource( 8 )
 __meta__ = {
@@ -318,10 +318,10 @@ __meta__ = {
 
 [node name="EndScreen" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -508.614
-margin_top = -278.657
-margin_right = 643.389
-margin_bottom = 369.343
+margin_left = -160.0
+margin_top = -90.0
+margin_right = 160.0
+margin_bottom = 90.0
 mouse_filter = 2
 texture = ExtResource( 9 )
 __meta__ = {

@@ -30,7 +30,6 @@ func set_disabled(value):
 			Tween.TRANS_LINEAR,
 			Tween.EASE_IN_OUT
 		)
-
 	$Tween.start()
 
 func mouse_exit():

@@ -66,6 +66,7 @@ margin_top = 9.2703
 margin_right = 268.335
 margin_bottom = 49.2703
 rect_scale = Vector2( 0.2, 0.2 )
+mouse_filter = 2
 custom_fonts/mono_font = SubResource( 5 )
 text = "Click to throw Löyly"
 __meta__ = {

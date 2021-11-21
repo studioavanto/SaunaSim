@@ -53,6 +53,6 @@ func mouse_exit():
 	
 	$Tween.start()
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("mouse_click") and hover_mouse and not disable_button:
 		get_parent().throw_loyly()
