@@ -257,7 +257,7 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]

@@ -1,50 +1,48 @@
 {
 	"cold_reactions": [
-		"cold 1",
-		"Cold 2",
-		"cold 3"
+		"... is it cold in here?",
+		"It's getting a bit cold in here.",
+		"My bits are freezing!"
 	],
 	"hot_reactions": [
-		"warm 1",
-		"Warm 2",
-		"warm 3"
+		"A tad overboard there, chief.",
+		"Phew. That's, that's a lot.",
+		"Oh lordy, my scalp!"
 	],
 	"normal_reactions":[
-		"reaction 1",
-		"reaction 2",
-		"reactions 3"
+		"Ahh, so relaxing.",
+		"Yass, that's the ticket!",
+		"Ahh, this is nice."
 	],
 	"exit_dialog": [
-		"I'll be leaving",
-		"good stuff",
-		"the bestest sauna!"
+		"Well, I'd best be off.",
+		"Alright, that's good enough for me. Thank you.",
+		"Well, I'd best be off. This was great, thank you."
 	],
 	"dialogues": {
 		"0": {
 			"0": {
-				"text":"test dialog for player",
-				"comfort": 0,
+				"text":"Ahh, nothing like a warm sauna.",
+				"comfort": 2,
 				"no_answer": false,
 				"positive": "1",
 				"negative": "2",
 				"silent": "3"
 			},
 			"1": {
-				"text":"Anwer for question",
+				"text":"Mmh",
 				"comfort": 0,
-				"no_answer": false,
-				"positive": "4",
-				"negative": "2",
+				"no_answer": true,
 				"silent": "-1"
 			},
 			"2": {
-				"text":"Answer for answer",
+				"text":"You'll do fine. After all, we're here to relax.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Answer for silent",
+				"text":"I hear you. Sometimes simmering down is the right answer.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
@@ -58,35 +56,33 @@
 		},
 		"1": {
 			"0": {
-				"text":"test dialog for player nmb 2",
+				"text":"Oh boy, gotta stretch everything. ",
 				"comfort": 0,
-				"no_answer": false,
-				"positive": "1",
-				"negative": "2",
-				"silent": "3"
+				"no_answer": true,
+				"silent": "1"
 			},
 			"1": {
-				"text":"Anwer for question n2",
+				"text":"You been here long?",
 				"comfort": 0,
 				"no_answer": false,
-				"positive": "4",
-				"negative": "2",
-				"silent": "-1"
+				"positive": "2",
+				"negative": "3",
+				"silent": "4"
 			},
 			"2": {
-				"text":"Answer for answer n2",
+				"text":"Best to take your time.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Answer for silent n2",
+				"text":"Sorry, didn't mean to snoop.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"4": {
-				"text":"Answer for second question n2",
+				"text":"Silence is golden, I get it.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
