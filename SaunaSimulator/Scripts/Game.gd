@@ -1,7 +1,7 @@
 extends Node2D
 
-export var sauna_cooldown = 0.001
-export var loyly_warm_speed = 0.02
+export var sauna_cooldown = 0.0001
+export var loyly_warm_speed = 0.002
 export var loyly_length = 1.0
 export var enter_probability = 0.5
 export var max_comfort = 100.0

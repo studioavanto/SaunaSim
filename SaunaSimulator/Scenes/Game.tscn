@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sauna_empty.png" type="Texture" id=2]
@@ -39,11 +39,12 @@
 [ext_resource path="res://Scripts/AnswerButton.gd" type="Script" id=37]
 [ext_resource path="res://Scripts/NegativeButton.gd" type="Script" id=38]
 [ext_resource path="res://Scripts/SilentButton.gd" type="Script" id=39]
+[ext_resource path="res://Art/PressStart2P.tres" type="DynamicFont" id=40]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.03173, 5.73652 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
@@ -61,7 +62,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
@@ -69,7 +70,7 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
@@ -82,16 +83,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "yo",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "ilta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "yo",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
@@ -100,26 +101,29 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 19.9721, 20.7524 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-loyly_warm_speed = 0.005
+loyly_warm_speed = 0.01
+loyly_length = 2.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = -150.785
 margin_top = -85.5262
-margin_right = -50.7846
+margin_right = 249.215
 margin_bottom = -45.5262
 rect_scale = Vector2( 0.2, 0.2 )
-text = "Press q to quit"
+custom_fonts/normal_font = ExtResource( 40 )
+text = "Press Q to quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Hoyryt" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.313726 )
+position = Vector2( 0, -20 )
 
 [node name="Hoyry_1" type="Sprite" parent="Hoyryt"]
 modulate = Color( 0.8125, 0.8125, 0.8125, 0.745098 )
@@ -210,7 +214,7 @@ texture = ExtResource( 34 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ajatus/PositiveButton"]
 position = Vector2( 44.0007, -64.2172 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="Ajatus/PositiveButton"]
 
@@ -219,7 +223,7 @@ script = ExtResource( 38 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ajatus/NegativeButton"]
 position = Vector2( 59.163, -64.5145 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Ajatus/NegativeButton"]
 modulate = Color( 1, 1, 1, 0 )
@@ -238,7 +242,7 @@ texture = ExtResource( 36 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ajatus/SilentButton"]
 position = Vector2( 74.3254, -64.5145 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="Ajatus/SilentButton"]
 
@@ -247,21 +251,21 @@ z_index = -2
 texture = ExtResource( 2 )
 
 [node name="Pelaaja" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 
 [node name="Sanko" parent="." instance=ExtResource( 18 )]
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-frame = 2
+frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 animation = "kiinni"
 
 [node name="Ikkuna" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "ilta"
 
 [node name="LoylyTimer" type="Timer" parent="."]
@@ -387,7 +391,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorOpenZone"]
 position = Vector2( 11.7984, 0.471939 )
 scale = Vector2( 1.37307, 0.812817 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [connection signal="mouse_entered" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_enter"]
 [connection signal="mouse_exited" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_exit"]
