@@ -26,6 +26,7 @@ extents = Vector2( 10.5334, 10 )
 [node name="IntroCharacer" type="Node2D"]
 script = ExtResource( 2 )
 character_file_name = "intro.txt"
+comfort_limit = -2
 
 [node name="SpeechTimer" type="Timer" parent="."]
 one_shot = true
@@ -36,7 +37,6 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,6 +1,6 @@
 extends Node2D
 
-export var sauna_cooldown = 0.0001
+export var sauna_cooldown = 0.0003
 export var loyly_warm_speed = 0.002
 export var loyly_length = 1.0
 export var enter_probability = 0.5
@@ -28,7 +28,6 @@ var chosen_answer = 2
 
 var sauna_characters = [
 	preload("res://Scenes/Characters/IntroCharacter.tscn"),
-	preload("res://Scenes/Characters/Character1.tscn"),
 	preload("res://Scenes/Characters/Character2.tscn"),
 	preload("res://Scenes/Characters/Character3.tscn"),
 	preload("res://Scenes/Characters/Character4.tscn")

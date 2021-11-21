@@ -106,7 +106,6 @@ extents = Vector2( 19.9721, 20.7524 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-loyly_warm_speed = 0.01
 loyly_length = 2.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -257,7 +256,6 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 2
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
