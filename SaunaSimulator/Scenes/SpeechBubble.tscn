@@ -10,9 +10,9 @@ script = ExtResource( 2 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -101.573
-margin_top = -98.1269
-margin_right = 78.4269
+margin_left = -201.573
+margin_top = -98.127
+margin_right = 98.427
 margin_bottom = 101.873
 mouse_filter = 2
 __meta__ = {
@@ -22,9 +22,9 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 7.0
-margin_top = 98.0
-margin_right = 173.0
-margin_bottom = 101.0
+margin_top = 74.0
+margin_right = 293.0
+margin_bottom = 125.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2

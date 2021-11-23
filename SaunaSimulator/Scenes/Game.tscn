@@ -1,10 +1,11 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sauna_empty.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/SaunaTemp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/UI_button_hmm-02.png" type="Texture" id=4]
 [ext_resource path="res://Art/Sauna_PC.png" type="Texture" id=5]
+[ext_resource path="res://Art/placeholder/Black box.png" type="Texture" id=6]
 [ext_resource path="res://Art/UI_button_mmh-02.png" type="Texture" id=7]
 [ext_resource path="res://Art/placeholder/StartScreen.png" type="Texture" id=8]
 [ext_resource path="res://Art/placeholder/EndScreen.png" type="Texture" id=9]
@@ -82,6 +83,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "ilta",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "yo",
@@ -90,11 +96,6 @@ animations = [ {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "iltayo",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "ilta",
 "speed": 5.0
 } ]
 
@@ -260,7 +261,6 @@ frames = SubResource( 2 )
 
 [node name="Kamiina" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
@@ -362,6 +362,13 @@ collision_mask = 2
 position = Vector2( 11.7984, 0.471939 )
 scale = Vector2( 1.37307, 0.812817 )
 shape = SubResource( 6 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Black box" type="Sprite" parent="Node2D"]
+position = Vector2( -410.145, 60.2042 )
+z_index = 20
+texture = ExtResource( 6 )
 
 [connection signal="mouse_entered" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_enter"]
 [connection signal="mouse_exited" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_exit"]

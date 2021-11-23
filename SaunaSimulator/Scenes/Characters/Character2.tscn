@@ -46,8 +46,11 @@ extents = Vector2( 10.5334, 10 )
 [node name="TestChar1" type="Node2D"]
 script = ExtResource( 2 )
 character_file_name = "character2.txt"
+comment_time = 3
+dialogue_time = 4
+stay_silent_time = 4
 comfort_limit = -5
-max_time_in_wrong_temp = 4
+max_time_in_wrong_temp = 3
 min_temp = 0.3
 max_temp = 0.75
 temp_comment_probability = 0.6
@@ -64,6 +67,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

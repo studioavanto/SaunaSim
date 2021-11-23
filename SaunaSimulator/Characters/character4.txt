@@ -15,6 +15,7 @@
 		"Phew.",
 		"Thank you.",
 		"That's the stuff."
+
 	],
 	"exit_dialog": [
 		"I'm still cold.",

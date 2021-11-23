@@ -12,7 +12,9 @@
 	"normal_reactions":[
 		"Ahh, so relaxing.",
 		"Yass, that's the ticket!",
-		"Ahh, this is nice."
+		"Ahh, this is nice.",
+		"I think we've got a real chance at hockey this year.",
+		"Going to be another long, dark, winter."
 	],
 	"exit_dialog": [
 		"Well, I'd best be off.",
@@ -36,13 +38,13 @@
 				"silent": "-1"
 			},
 			"2": {
-				"text":"You'll do fine. After all, we're here to relax.",
+				"text":"Sorry, didn't mean to snoop.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"I hear you. Sometimes simmering down is the right answer.",
+				"text":"Silence is golden, I get it.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
@@ -56,13 +58,13 @@
 		},
 		"1": {
 			"0": {
-				"text":"Oh boy, gotta stretch everything. ",
+				"text":"Oh boy, gotta stretch everything.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "1"
 			},
 			"1": {
-				"text":"You been here long?",
+				"text":"Sheesh, look at the time.",
 				"comfort": 0,
 				"no_answer": false,
 				"positive": "2",
@@ -70,19 +72,19 @@
 				"silent": "4"
 			},
 			"2": {
-				"text":"Best to take your time.",
+				"text":"I hear ya. Remember, wherever you go, there you are.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"3": {
-				"text":"Sorry, didn't mean to snoop.",
+				"text":"I think it's about time to say goodnight.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"
 			},
 			"4": {
-				"text":"Silence is golden, I get it.",
+				"text":"Niinpä.",
 				"comfort": 0,
 				"no_answer": true,
 				"silent": "-1"

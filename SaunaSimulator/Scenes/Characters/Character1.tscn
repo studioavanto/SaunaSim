@@ -38,7 +38,6 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
