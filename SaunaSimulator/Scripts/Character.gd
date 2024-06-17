@@ -1,22 +1,22 @@
 extends Node2D
 
-export(String) var character_file_name
+@export var character_file_name: String
 
-export var walk_speed = 30.0
-export var speaking_probability = 0.2
-export var comment_time = 4
-export var dialogue_time = 6
-export var stay_silent_time = 5
-export var dialogue_max = 1
-export var comfort_limit = -3
-export var max_time_in_wrong_temp = 15
-export var min_temp = 0.2
-export var max_temp = 0.8
-export var temp_comment_probability = 0.5
-export var long_dialogue_id = "1"
-export var long_dialogue_comfort = 2
-export var bad_ending_comfort_limit = -2
-export var good_ending_comfort_limit = 2
+@export var walk_speed = 30.0
+@export var speaking_probability = 0.2
+@export var comment_time = 4
+@export var dialogue_time = 6
+@export var stay_silent_time = 5
+@export var dialogue_max = 1
+@export var comfort_limit = -3
+@export var max_time_in_wrong_temp = 15
+@export var min_temp = 0.2
+@export var max_temp = 0.8
+@export var temp_comment_probability = 0.5
+@export var long_dialogue_id = "1"
+@export var long_dialogue_comfort = 2
+@export var bad_ending_comfort_limit = -2
+@export var good_ending_comfort_limit = 2
 
 var exit_dialog = null
 var cold_reactions = null
@@ -53,9 +53,10 @@ var current_state = CharacterState.NULL
 var speech_bubble_scene = preload("res://Scenes/SpeechBubble.tscn")
 
 func _ready():
-	var char_file = File.new()
-	char_file.open("res://Characters/" + character_file_name, File.READ)
-	var data = parse_json(char_file.get_as_text())
+	var char_file = FileAccess.open("res://Characters/" + character_file_name, FileAccess.READ)
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(char_file.get_as_text())
+	var data = test_json_conv.get_data()
 	char_file.close()
 	
 	unpack_json_data(data)
@@ -64,8 +65,8 @@ func _ready():
 		if dialog_id != long_dialogue_id:
 			has_not_spoken.append(dialog_id)
 	
-	$SpeechTimer.connect("timeout", self, "stop_speaking")
-	$StaySilentTimer.connect("timeout", self, "stop_stay_silent")
+	$SpeechTimer.connect("timeout", Callable(self, "stop_speaking"))
+	$StaySilentTimer.connect("timeout", Callable(self, "stop_stay_silent"))
 
 func unpack_json_data(data):
 	exit_dialog = data["exit_dialog"]
@@ -86,16 +87,16 @@ func spend_time(temperature):
 
 func enter_sauna(position, seat_pos):
 	z_index = 1
-	$AnimatedSprite.animation = "walk"
+	$AnimatedSprite2D.animation = "walk"
 	current_state = CharacterState.MOVING
 	next_position = position
 	seat_position = seat_pos
 	
 func exit_sauna(position):
 	z_index = 1
-	$AnimatedSprite.animation = "walk"
-	$AnimatedSprite.scale.x *= -1
-	$AnimatedSprite.position.x -= 100
+	$AnimatedSprite2D.animation = "walk"
+	$AnimatedSprite2D.scale.x *= -1
+	$AnimatedSprite2D.position.x -= 100
 	current_state = CharacterState.MOVING
 	next_position = position
 	exiting = true
@@ -108,7 +109,7 @@ func wants_to_speak():
 	if current_state != CharacterState.SITTING:
 		return false
 
-	return speaking_probability > rand_range(0.0, 1.0)
+	return speaking_probability > randf_range(0.0, 1.0)
 
 func wants_to_leave():
 	if current_state == CharacterState.MOVING:
@@ -123,7 +124,7 @@ func wants_to_leave():
 	return false
 
 func start_speaking():
-	if temp_comment_probability < rand_range(0.0, 1.0):
+	if temp_comment_probability < randf_range(0.0, 1.0):
 		start_dialogue()
 	else:
 		comment_temperature()
@@ -138,7 +139,7 @@ func start_dialogue():
 
 		var random_id = randi() % len(has_not_spoken)
 		current_dialogue = has_not_spoken[random_id]
-		has_not_spoken.remove(random_id)
+		has_not_spoken.remove_at(random_id)
 	
 	dialogues_done += 1
 	
@@ -200,7 +201,7 @@ func comment_exit():
 	create_speech_bubble(exit_comment, comment_time)
 
 func create_speech_bubble(message, time):
-	current_speech_bubble = speech_bubble_scene.instance()
+	current_speech_bubble = speech_bubble_scene.instantiate()
 	add_child(current_speech_bubble)
 	current_speech_bubble.create_speech_bubble(message)
 	
@@ -244,7 +245,7 @@ func sit_on_bench():
 		get_parent().get_parent().character_has_exited(self)
 	else:
 		position = seat_position
-		$AnimatedSprite.animation = "sit"
+		$AnimatedSprite2D.animation = "sit"
 		current_state = CharacterState.SITTING
 
 func _process(delta):

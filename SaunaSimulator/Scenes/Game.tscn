@@ -1,381 +1,420 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=48 format=3 uid="uid://mc1350pf8y3e"]
 
-[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
-[ext_resource path="res://Art/Sauna_empty.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/SaunaTemp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Art/UI_button_hmm-02.png" type="Texture" id=4]
-[ext_resource path="res://Art/Sauna_PC.png" type="Texture" id=5]
-[ext_resource path="res://Art/placeholder/Black box.png" type="Texture" id=6]
-[ext_resource path="res://Art/UI_button_mmh-02.png" type="Texture" id=7]
-[ext_resource path="res://Art/placeholder/StartScreen.png" type="Texture" id=8]
-[ext_resource path="res://Art/placeholder/EndScreen.png" type="Texture" id=9]
-[ext_resource path="res://Art/Sauna_kiuas1.png" type="Texture" id=10]
-[ext_resource path="res://Art/Sauna_kiuas2.png" type="Texture" id=11]
-[ext_resource path="res://Art/Sauna_kiuas3.png" type="Texture" id=12]
-[ext_resource path="res://Art/Sauna_oviauki.png" type="Texture" id=13]
-[ext_resource path="res://Art/Sauna_ovikiinni.png" type="Texture" id=14]
-[ext_resource path="res://Art/Sauna_Ikkuna-ilta.png" type="Texture" id=15]
-[ext_resource path="res://Art/Sauna_ikkuna-yo.png" type="Texture" id=16]
-[ext_resource path="res://Art/Sauna_Ikkuna-iltayo.png" type="Texture" id=17]
-[ext_resource path="res://Scenes/Sanko.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Art/hoyry_1.png" type="Texture" id=19]
-[ext_resource path="res://Art/Sauna_PC-loyl.png" type="Texture" id=20]
-[ext_resource path="res://Art/Sauna_PC-walk2.png" type="Texture" id=21]
-[ext_resource path="res://Art/Sauna_PC-walk3.png" type="Texture" id=22]
-[ext_resource path="res://Art/Sauna_PC-walk4.png" type="Texture" id=23]
-[ext_resource path="res://Art/Sauna_PC-walk1.png" type="Texture" id=24]
-[ext_resource path="res://Scripts/Hoyry.gd" type="Script" id=25]
-[ext_resource path="res://Art/hoyry_2.png" type="Texture" id=26]
-[ext_resource path="res://Art/hoyry_4.png" type="Texture" id=27]
-[ext_resource path="res://Art/hoyry_6.png" type="Texture" id=28]
-[ext_resource path="res://Art/hoyry_5.png" type="Texture" id=29]
-[ext_resource path="res://Art/hoyry_3.png" type="Texture" id=30]
-[ext_resource path="res://Sounds/SaunaSaunds.wav" type="AudioStream" id=31]
-[ext_resource path="res://Scripts/AudioManager.gd" type="Script" id=32]
-[ext_resource path="res://Sounds/loyl.wav" type="AudioStream" id=33]
-[ext_resource path="res://Art/UI_button_dotdotdot-02.png" type="Texture" id=34]
-[ext_resource path="res://Scripts/AnswerButton.gd" type="Script" id=37]
-[ext_resource path="res://Scripts/NegativeButton.gd" type="Script" id=38]
-[ext_resource path="res://Scripts/SilentButton.gd" type="Script" id=39]
-[ext_resource path="res://Art/PressStart2P.tres" type="DynamicFont" id=40]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cl46qjwthkh5t" path="res://Art/Sauna_empty.png" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/SaunaTemp.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://b6adqy1i33bfv" path="res://Art/UI_button_hmm-02.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://djxlp020hfgpx" path="res://Art/Sauna_PC.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://8h6lqx5mw67n" path="res://Art/placeholder/Black box.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b8b1hehcrnmte" path="res://Art/UI_button_mmh-02.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://crqshsr8r42o5" path="res://Art/placeholder/StartScreen.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://c84uu7mfdtob5" path="res://Art/placeholder/EndScreen.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cadpdlctmljx8" path="res://Art/Sauna_kiuas1.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dy18s1d5qtg2p" path="res://Art/Sauna_kiuas2.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://coy1wo33llf7s" path="res://Art/Sauna_kiuas3.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bfiq5r2ih6hfr" path="res://Art/Sauna_oviauki.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://h7g634w6ksvd" path="res://Art/Sauna_ovikiinni.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cd6nm4woehv15" path="res://Art/Sauna_Ikkuna-ilta.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cvgt1n7l8dy3g" path="res://Art/Sauna_ikkuna-yo.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://codgc776qm3v6" path="res://Art/Sauna_Ikkuna-iltayo.png" id="17"]
+[ext_resource type="PackedScene" path="res://Scenes/Sanko.tscn" id="18"]
+[ext_resource type="Texture2D" uid="uid://b5amn5406w1i6" path="res://Art/hoyry_1.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://u41xhr332kfh" path="res://Art/Sauna_PC-loyl.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://b7x61wd0l6b1m" path="res://Art/Sauna_PC-walk2.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cyn6v73hobhkl" path="res://Art/Sauna_PC-walk3.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://dp8kpyk3bvul7" path="res://Art/Sauna_PC-walk4.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://dy002qyesxxou" path="res://Art/Sauna_PC-walk1.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dx0051oucjmxu" path="res://Art/Sauna_kiulu-eikauhaa.png" id="24_b4ip1"]
+[ext_resource type="Script" path="res://Scripts/Hoyry.gd" id="25"]
+[ext_resource type="Texture2D" uid="uid://xaa5fxprvca5" path="res://Art/Sauna_kiulu-kauhalla.png" id="25_de8r8"]
+[ext_resource type="Texture2D" uid="uid://bn17mbyqdju6s" path="res://Art/hoyry_2.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://ey1u8uwknbjv" path="res://Art/hoyry_4.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://clfntpnvpfbty" path="res://Art/hoyry_6.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://df1tq4iyewptf" path="res://Art/hoyry_5.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://jika0bbv084x" path="res://Art/hoyry_3.png" id="30"]
+[ext_resource type="AudioStream" uid="uid://bnegkpokucfsb" path="res://Sounds/SaunaSaunds.wav" id="31"]
+[ext_resource type="Script" path="res://Scripts/AudioManager.gd" id="32"]
+[ext_resource type="AudioStream" uid="uid://8hf274vhi5sn" path="res://Sounds/loyl.wav" id="33"]
+[ext_resource type="Texture2D" uid="uid://bctub11ockwgy" path="res://Art/UI_button_dotdotdot-02.png" id="34"]
+[ext_resource type="Script" path="res://Scripts/AnswerButton.gd" id="37"]
+[ext_resource type="Script" path="res://Scripts/NegativeButton.gd" id="38"]
+[ext_resource type="Script" path="res://Scripts/SilentButton.gd" id="39"]
+[ext_resource type="FontFile" uid="uid://cya7p2u8evavi" path="res://Art/PressStart2P.tres" id="40"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.03173, 5.73652 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(12.0635, 11.473)
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 5 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20")
+}],
 "loop": true,
-"name": "walk",
+"name": &"loyl",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}],
 "loop": true,
-"name": "loyl",
+"name": &"walk",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3uj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_b4ip1")
+}],
 "loop": true,
-"name": "default",
+"name": &"eikauha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_de8r8")
+}],
+"loop": true,
+"name": &"kauha",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}],
+"loop": true,
+"name": &"default",
 "speed": 3.0
-} ]
+}]
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 13 ) ],
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
 "loop": true,
-"name": "auki",
+"name": &"auki",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
 "loop": true,
-"name": "kiinni",
+"name": &"kiinni",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 15 ) ],
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
 "loop": true,
-"name": "ilta",
+"name": &"ilta",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17")
+}],
 "loop": true,
-"name": "yo",
+"name": &"iltayo",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}],
 "loop": true,
-"name": "iltayo",
+"name": &"yo",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8.6814, 18.5954 )
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(17.3628, 37.1908)
 
 [node name="Game" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 loyly_length = 2.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -151.0
-margin_top = -86.0
-margin_right = 657.0
-margin_bottom = -3.0
-rect_scale = Vector2( 0.2, 0.2 )
+offset_left = -151.0
+offset_top = -86.0
+offset_right = 657.0
+offset_bottom = -3.0
+scale = Vector2(0.2, 0.2)
 mouse_filter = 2
-custom_fonts/normal_font = ExtResource( 40 )
+theme_override_fonts/normal_font = ExtResource("40")
 text = "Press Q to quit, click bucket to throw loyly"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Hoyryt" type="Node2D" parent="."]
-modulate = Color( 1, 1, 1, 0.313726 )
-position = Vector2( 0, -20 )
+modulate = Color(1, 1, 1, 0.313726)
+position = Vector2(0, 10)
 
-[node name="Hoyry_1" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.8125, 0.8125, 0.8125, 0.745098 )
-position = Vector2( -32.795, -40.363 )
+[node name="Hoyry_1" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.8125, 0.8125, 0.8125, 0.745098)
 z_index = 1
-texture = ExtResource( 19 )
-script = ExtResource( 25 )
+position = Vector2(-32.795, -40.363)
+texture = ExtResource("19")
+script = ExtResource("25")
 
-[node name="Hoyry_11" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.8125, 0.8125, 0.8125, 0.745098 )
-position = Vector2( 8.40897, -28.5905 )
+[node name="Hoyry_11" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.8125, 0.8125, 0.8125, 0.745098)
 z_index = 1
-texture = ExtResource( 19 )
-script = ExtResource( 25 )
+position = Vector2(8.40897, -28.5905)
+texture = ExtResource("19")
+script = ExtResource("25")
 
-[node name="Hoyry_2" type="Sprite" parent="Hoyryt"]
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( -74.8398, -41.6244 )
+[node name="Hoyry_2" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(1, 1, 1, 0.745098)
 z_index = 1
-texture = ExtResource( 26 )
-script = ExtResource( 25 )
+position = Vector2(-74.8398, -41.6244)
+texture = ExtResource("26")
+script = ExtResource("25")
 
-[node name="Hoyry_3" type="Sprite" parent="Hoyryt"]
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 44.5675, -36.1585 )
+[node name="Hoyry_3" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(1, 1, 1, 0.745098)
 z_index = 1
-texture = ExtResource( 30 )
-script = ExtResource( 25 )
+position = Vector2(44.5675, -36.1585)
+texture = ExtResource("30")
+script = ExtResource("25")
 
-[node name="Hoyry_10" type="Sprite" parent="Hoyryt"]
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 94.6009, -25.6473 )
+[node name="Hoyry_10" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(1, 1, 1, 0.745098)
 z_index = 1
-texture = ExtResource( 30 )
-script = ExtResource( 25 )
+position = Vector2(94.6009, -25.6473)
+texture = ExtResource("30")
+script = ExtResource("25")
 
-[node name="Hoyry_8" type="Sprite" parent="Hoyryt"]
-modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( -74.4193, -51.7151 )
+[node name="Hoyry_8" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(1, 1, 1, 0.745098)
 z_index = 1
-texture = ExtResource( 30 )
-script = ExtResource( 25 )
+position = Vector2(-74.4193, -51.7151)
+texture = ExtResource("30")
+script = ExtResource("25")
 
-[node name="Hoyry_4" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.933594, 0.933594, 0.933594, 0.745098 )
-position = Vector2( 36.579, -49.1924 )
+[node name="Hoyry_4" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.933594, 0.933594, 0.933594, 0.745098)
 z_index = 1
-texture = ExtResource( 27 )
-script = ExtResource( 25 )
+position = Vector2(36.579, -49.1924)
+texture = ExtResource("27")
+script = ExtResource("25")
 
-[node name="Hoyry_9" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.933594, 0.933594, 0.933594, 0.745098 )
-position = Vector2( 17.2384, -56.7605 )
+[node name="Hoyry_9" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.933594, 0.933594, 0.933594, 0.745098)
 z_index = 1
-texture = ExtResource( 27 )
-script = ExtResource( 25 )
+position = Vector2(17.2384, -56.7605)
+texture = ExtResource("27")
+script = ExtResource("25")
 
-[node name="Hoyry_5" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.87451, 0.87451, 0.87451, 0.784314 )
-position = Vector2( -57.6014, -31.1132 )
+[node name="Hoyry_5" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.87451, 0.87451, 0.87451, 0.784314)
 z_index = 1
-texture = ExtResource( 29 )
-script = ExtResource( 25 )
+position = Vector2(-57.6014, -31.1132)
+texture = ExtResource("29")
+script = ExtResource("25")
 
-[node name="Hoyry_7" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.87451, 0.87451, 0.87451, 0.784314 )
-position = Vector2( -33.6359, -58.0219 )
+[node name="Hoyry_7" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.87451, 0.87451, 0.87451, 0.784314)
 z_index = 1
-texture = ExtResource( 29 )
-script = ExtResource( 25 )
+position = Vector2(-33.6359, -58.0219)
+texture = ExtResource("29")
+script = ExtResource("25")
 
-[node name="Hoyry_6" type="Sprite" parent="Hoyryt"]
-modulate = Color( 0.803922, 0.803922, 0.803922, 0.745098 )
-position = Vector2( 64.3286, -56.3401 )
+[node name="Hoyry_6" type="Sprite2D" parent="Hoyryt"]
+modulate = Color(0.803922, 0.803922, 0.803922, 0.745098)
 z_index = 1
-texture = ExtResource( 28 )
-script = ExtResource( 25 )
+position = Vector2(64.3286, -56.3401)
+texture = ExtResource("28")
+script = ExtResource("25")
 
-[node name="Ajatus" type="Sprite" parent="."]
+[node name="Ajatus" type="Sprite2D" parent="."]
 
 [node name="PositiveButton" type="Area2D" parent="Ajatus"]
-script = ExtResource( 37 )
+script = ExtResource("37")
 
-[node name="Sprite" type="Sprite" parent="Ajatus/PositiveButton"]
-modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 0.166, 0.166 )
+[node name="Sprite2D" type="Sprite2D" parent="Ajatus/PositiveButton"]
+modulate = Color(1, 1, 1, 0)
 z_index = 3
-texture = ExtResource( 7 )
+scale = Vector2(0.166, 0.166)
+texture = ExtResource("7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ajatus/PositiveButton"]
-position = Vector2( 16.1109, -53.9654 )
-scale = Vector2( 1.25, 1 )
-shape = SubResource( 1 )
-
-[node name="Tween" type="Tween" parent="Ajatus/PositiveButton"]
+position = Vector2(16.1109, -53.9654)
+scale = Vector2(1.25, 1)
+shape = SubResource("1")
 
 [node name="NegativeButton" type="Area2D" parent="Ajatus"]
-script = ExtResource( 38 )
+script = ExtResource("38")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ajatus/NegativeButton"]
-position = Vector2( 34.0607, -54.0847 )
-scale = Vector2( 1.25, 1 )
-shape = SubResource( 1 )
+position = Vector2(34.0607, -54.0847)
+scale = Vector2(1.25, 1)
+shape = SubResource("1")
 
-[node name="Sprite" type="Sprite" parent="Ajatus/NegativeButton"]
-modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 0.166, 0.166 )
+[node name="Sprite2D" type="Sprite2D" parent="Ajatus/NegativeButton"]
+modulate = Color(1, 1, 1, 0)
 z_index = 3
-texture = ExtResource( 4 )
-
-[node name="Tween" type="Tween" parent="Ajatus/NegativeButton"]
+scale = Vector2(0.166, 0.166)
+texture = ExtResource("4")
 
 [node name="SilentButton" type="Area2D" parent="Ajatus"]
-script = ExtResource( 39 )
+script = ExtResource("39")
 
-[node name="Sprite" type="Sprite" parent="Ajatus/SilentButton"]
-modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 0.166, 0.166 )
+[node name="Sprite2D" type="Sprite2D" parent="Ajatus/SilentButton"]
+modulate = Color(1, 1, 1, 0)
 z_index = 3
-texture = ExtResource( 34 )
+scale = Vector2(0.166, 0.166)
+texture = ExtResource("34")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ajatus/SilentButton"]
-position = Vector2( 51.3444, -53.9079 )
-scale = Vector2( 1.25, 1 )
-shape = SubResource( 1 )
+position = Vector2(51.3444, -53.9079)
+scale = Vector2(1.25, 1)
+shape = SubResource("1")
 
-[node name="Tween" type="Tween" parent="Ajatus/SilentButton"]
-
-[node name="SaunaImage" type="Sprite" parent="."]
+[node name="SaunaImage" type="Sprite2D" parent="."]
 z_index = -2
-texture = ExtResource( 2 )
+texture = ExtResource("2")
 
-[node name="Pelaaja" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+[node name="Pelaaja" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("2")
 
-[node name="Sanko" parent="." instance=ExtResource( 18 )]
+[node name="Sanko" parent="." instance=ExtResource("18")]
+sprite_frames = SubResource("SpriteFrames_i3uj3")
+animation = &"kauha"
 
-[node name="Kamiina" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
-playing = true
+[node name="Kamiina" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("3")
+autoplay = "default"
 
-[node name="Door" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
-animation = "kiinni"
+[node name="Door" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("4")
+animation = &"kiinni"
 
-[node name="Ikkuna" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
-animation = "ilta"
+[node name="Ikkuna" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("5")
+animation = &"ilta"
 
 [node name="LoylyTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="GameClock" type="Timer" parent="."]
 
-[node name="SaunaTemp" parent="." instance=ExtResource( 3 )]
-position = Vector2( -843.255, -431.973 )
+[node name="SaunaTemp" parent="." instance=ExtResource("3")]
+position = Vector2(-843.255, -431.973)
 
 [node name="PelaajaSeat" type="Node2D" parent="."]
-position = Vector2( 22, 0 )
+position = Vector2(22, 0)
 
 [node name="Seat1Place" type="Node2D" parent="."]
-position = Vector2( -22, 0 )
+position = Vector2(-22, 0)
 
 [node name="Seat2Place" type="Node2D" parent="."]
-position = Vector2( 22, 0 )
+position = Vector2(22, 0)
 
 [node name="Walk1Place" type="Node2D" parent="."]
-position = Vector2( -22, 0 )
+position = Vector2(-22, 0)
 
 [node name="Walk2Place" type="Node2D" parent="."]
-position = Vector2( 22, 0 )
+position = Vector2(22, 0)
 
 [node name="PelaajaPlace" type="Node2D" parent="."]
-position = Vector2( 54.0917, -0.471939 )
+position = Vector2(54.0917, -0.471939)
 
 [node name="StartPos" type="Node2D" parent="."]
-position = Vector2( -178.316, 0.471939 )
-
-[node name="AnswerTween" type="Tween" parent="."]
-
-[node name="STransitionTween" type="Tween" parent="."]
+position = Vector2(-178.316, 0.471939)
 
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="StartScreen" type="TextureRect" parent="."]
-margin_left = -160.0
-margin_top = -90.0
-margin_right = 160.0
-margin_bottom = 90.0
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
 mouse_filter = 2
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("8")
 
 [node name="EndScreen" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = -160.0
-margin_top = -90.0
-margin_right = 160.0
-margin_bottom = 90.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
 mouse_filter = 2
-texture = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("9")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0.420441, 0 )
-current = true
-zoom = Vector2( 0.205, 0.205 )
+position = Vector2(0.420441, 0)
+zoom = Vector2(6, 6)
 
 [node name="CharacterEnterTimer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
 
 [node name="AudioManager" type="Node2D" parent="."]
-script = ExtResource( 32 )
+script = ExtResource("32")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="AudioManager"]
-stream = ExtResource( 31 )
+stream = ExtResource("31")
 autoplay = true
 
 [node name="CharacterAudio" type="AudioStreamPlayer2D" parent="AudioManager"]
 
 [node name="LoylyAudio" type="AudioStreamPlayer2D" parent="AudioManager"]
-stream = ExtResource( 33 )
+stream = ExtResource("33")
 
 [node name="OtherAudio" type="AudioStreamPlayer2D" parent="AudioManager"]
 
 [node name="DoorOpenZone" type="Area2D" parent="."]
-position = Vector2( -157.627, 67.959 )
-input_pickable = false
+position = Vector2(-157.627, 67.959)
 collision_layer = 0
 collision_mask = 2
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorOpenZone"]
-position = Vector2( 11.7984, 0.471939 )
-scale = Vector2( 1.37307, 0.812817 )
-shape = SubResource( 6 )
+position = Vector2(11.7984, 0.471939)
+scale = Vector2(1.37307, 0.812817)
+shape = SubResource("6")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Black box" type="Sprite" parent="Node2D"]
-position = Vector2( -410.145, 60.2042 )
+[node name="Black box" type="Sprite2D" parent="Node2D"]
 z_index = 20
-texture = ExtResource( 6 )
+position = Vector2(-410.145, 60.2042)
+texture = ExtResource("6")
 
-[connection signal="mouse_entered" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_enter"]
-[connection signal="mouse_exited" from="Ajatus/PositiveButton" to="Ajatus/PositiveButton" method="mouse_exit"]
-[connection signal="mouse_entered" from="Ajatus/NegativeButton" to="Ajatus/NegativeButton" method="mouse_enter"]
-[connection signal="mouse_exited" from="Ajatus/NegativeButton" to="Ajatus/NegativeButton" method="mouse_exit"]
-[connection signal="mouse_entered" from="Ajatus/SilentButton" to="Ajatus/SilentButton" method="mouse_enter"]
-[connection signal="mouse_exited" from="Ajatus/SilentButton" to="Ajatus/SilentButton" method="mouse_exit"]
 [connection signal="area_entered" from="DoorOpenZone" to="." method="open_door"]
 [connection signal="area_exited" from="DoorOpenZone" to="." method="close_door"]
 [connection signal="area_shape_entered" from="DoorOpenZone" to="." method="open_door"]

@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Sauna_ovi_new.wav-cb1111b896364dfbff32f3f1afbc0549.sample"
+type="AudioStreamWAV"
+uid="uid://dybakabyo08k4"
+path="res://.godot/imported/Sauna_ovi_new.wav-cb1111b896364dfbff32f3f1afbc0549.sample"
 
 [deps]
 
 source_file="res://Sounds/Sauna_ovi_new.wav"
-dest_files=[ "res://.import/Sauna_ovi_new.wav-cb1111b896364dfbff32f3f1afbc0549.sample" ]
+dest_files=["res://.godot/imported/Sauna_ovi_new.wav-cb1111b896364dfbff32f3f1afbc0549.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

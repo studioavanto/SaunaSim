@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 var hoyry_speed = 3.0
 var direction = 1
@@ -7,7 +7,7 @@ var x_max = 100
 
 func _ready():
 	direction = 2 * (randi() % 2) - 1
-	hoyry_speed += rand_range(-2.5, 2.5) 
+	hoyry_speed += randf_range(-2.5, 2.5) 
 
 func _process(delta):
 	position.x += direction * hoyry_speed * delta

@@ -1,57 +1,19 @@
-extends AnimatedSprite
+extends AnimatedSprite2D
 
 var hover_mouse = false
 var disable_button = false
 
 func mouse_enter():
 	hover_mouse = true
-	$Tween.interpolate_property(
-		$HelpText,
-		"modulate",
-		$HelpText.modulate,
-		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	
-	$Tween.interpolate_property(
-		$Highlight,
-		"modulate",
-		$Highlight.modulate,
-		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	
-	
-	$Tween.start()
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($HelpText, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
+	new_tween.parallel().tween_property($Highlight, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 	
 func mouse_exit():
 	hover_mouse = false
-	
-	$Tween.interpolate_property(
-		$HelpText,
-		"modulate",
-		$HelpText.modulate,
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	
-	$Tween.interpolate_property(
-		$Highlight,
-		"modulate",
-		$Highlight.modulate,
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	
-	$Tween.start()
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($HelpText, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
+	new_tween.parallel().tween_property($Highlight, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_click") and hover_mouse and not disable_button:

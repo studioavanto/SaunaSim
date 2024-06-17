@@ -1,50 +1,65 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://gveu648nqplm"]
 
-[ext_resource path="res://Art/Sauna_NPC2-walk1.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Character.gd" type="Script" id=2]
-[ext_resource path="res://Art/Sauna_NPC2-walk2.png" type="Texture" id=3]
-[ext_resource path="res://Art/Sauna_NPC2-walk4.png" type="Texture" id=4]
-[ext_resource path="res://Art/Sauna_NPC2-walk3.png" type="Texture" id=5]
-[ext_resource path="res://Art/Sauna_NPC2.png" type="Texture" id=6]
+[ext_resource type="Texture2D" uid="uid://b5w4qio0lxpue" path="res://Art/Sauna_NPC2-walk1.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://0ayk33oxmh35" path="res://Art/Sauna_NPC2-walk2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cmeiluxg0c58r" path="res://Art/Sauna_NPC2-walk4.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dhd4hipvkr67f" path="res://Art/Sauna_NPC2-walk3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ejf2iiw6knoe" path="res://Art/Sauna_NPC2.png" id="6"]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 320, 180 )
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 320, 180 )
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 320, 180 )
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 320, 180 )
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 320, 180 )
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("4")
+region = Rect2(0, 0, 320, 180)
 
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ SubResource( 1 ) ],
+[sub_resource type="SpriteFrames" id="6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}],
 "loop": true,
-"name": "sit",
+"name": &"sit",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}],
 "loop": true,
-"name": "walk",
+"name": &"walk",
 "speed": 4.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 10.5334, 10 )
+[sub_resource type="RectangleShape2D" id="7"]
+size = Vector2(21.0668, 20)
 
 [node name="TestChar1" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 character_file_name = "character2.txt"
 comment_time = 3
 dialogue_time = 4
@@ -64,18 +79,18 @@ one_shot = true
 [node name="StaySilentTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 6 )
-animation = "walk"
-frame = 1
-playing = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("6")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.281853
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( -52.385, 70.3186 )
-input_pickable = false
+position = Vector2(-52.385, 70.3186)
 collision_layer = 2
 collision_mask = 0
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.943878, -5.66324 )
-shape = SubResource( 7 )
+position = Vector2(0.943878, -5.66324)
+shape = SubResource("7")

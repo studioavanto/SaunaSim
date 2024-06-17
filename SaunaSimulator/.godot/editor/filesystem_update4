@@ -1,0 +1,17 @@
+res://default_env.tres
+res://Scenes/Game.tscn
+res://Art/PressStart2P.tres
+res://Scripts/Character.gd
+res://Scripts/Game.gd
+res://Scripts/AnswerButton.gd
+res://Scripts/NegativeButton.gd
+res://Scripts/SankoHighlight.gd
+res://Scripts/SilentButton.gd
+res://Scripts/SpeechBubble.gd
+res://Scenes/SpeechBubble.tscn
+res://Scenes/Characters/TestChar1.tscn
+res://Scenes/Characters/Character1.tscn
+res://Scenes/Characters/Character2.tscn
+res://Scenes/Characters/Character3.tscn
+res://Scenes/Characters/Character4.tscn
+res://Scenes/Characters/IntroCharacter.tscn

@@ -1,10 +1,10 @@
 extends Node2D
 
-export var sauna_cooldown = 0.0003
-export var loyly_warm_speed = 0.002
-export var loyly_length = 1.0
-export var enter_probability = 0.5
-export var max_comfort = 100.0
+@export var sauna_cooldown = 0.0003
+@export var loyly_warm_speed = 0.002
+@export var loyly_length = 1.0
+@export var enter_probability = 0.5
+@export var max_comfort = 100.0
 
 var can_character_enter = true
 
@@ -40,9 +40,9 @@ enum GameState{
 }
 
 func _ready():
-	$LoylyTimer.connect("timeout", self, "stop_loyly")
-	$GameClock.connect("timeout", self, "time_proceeds")
-	$CharacterEnterTimer.connect("timeout", self, "characters_can_enter")
+	$LoylyTimer.connect("timeout", Callable(self, "stop_loyly"))
+	$GameClock.connect("timeout", Callable(self, "time_proceeds"))
+	$CharacterEnterTimer.connect("timeout", Callable(self, "characters_can_enter"))
 
 	randomize()
 
@@ -62,7 +62,7 @@ func characters_can_enter():
 func create_available_characters():
 	clear_characters()
 	for character in sauna_characters:
-		var new_character = character.instance()
+		var new_character = character.instantiate()
 		$Characters.add_child(new_character)
 		new_character.position = $StartPos.position
 		available_characters.append(new_character)
@@ -160,7 +160,7 @@ func time_proceeds():
 			speaker.start_speaking()
 
 	# Check if new characters enter sauna
-	if seats_left() and enter_probability > rand_range(0.0, 1.0) and can_character_enter:
+	if seats_left() and enter_probability > randf_range(0.0, 1.0) and can_character_enter:
 		can_character_enter = false
 		$CharacterEnterTimer.start()
 
@@ -225,7 +225,7 @@ func character_enters_on_seat(walk_pos, seat_pos):
 	else:
 		new_char = available_characters[char_id]
 
-	available_characters.remove(char_id)
+	available_characters.remove_at(char_id)
 	new_char.enter_sauna(walk_pos, seat_pos)
 	
 	return new_char
@@ -241,44 +241,17 @@ func continue_scene():
 		current_gamestate = GameState.START
 
 func fade_out_start_screen():
-	$STransitionTween.interpolate_property(
-		$StartScreen,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-	$STransitionTween.start()
-
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($StartScreen, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
+	
 func fade_out_end_screen():
 	$StartScreen.modulate = Color(1.0, 1.0, 1.0, 1.0)
-
-	$STransitionTween.interpolate_property(
-		$EndScreen,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($EndScreen, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
 	
-	$STransitionTween.start()
-
 func fade_in_end_screen():
-	$STransitionTween.interpolate_property(
-		$EndScreen,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		0.5,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN_OUT
-	)
-	
-	$STransitionTween.start()
+	var new_tween = get_tree().create_tween()
+	new_tween.tween_property($EndScreen, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 
 func set_hoyry_level():
 	var opacity = max((current_temperature - 0.2), 0.0)
@@ -290,7 +263,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("quit"):
 		quit_game()
 	
-	if not $DoorOpenZone.get_overlapping_areas().empty():
+	if not $DoorOpenZone.get_overlapping_areas().is_empty():
 		if not door_open:
 			open_door()
 	else:

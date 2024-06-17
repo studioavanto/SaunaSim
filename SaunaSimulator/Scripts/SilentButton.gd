@@ -11,27 +11,11 @@ func set_disabled(value):
 	disable_button = value
 	
 	if disable_button:
-		$Tween.interpolate_property(
-			$Sprite,
-			"modulate",
-			$Sprite.modulate,
-			Color(1.0, 1.0, 1.0, 0.0),
-			0.5,
-			Tween.TRANS_LINEAR,
-			Tween.EASE_IN_OUT
-		)
+		var new_tween = get_tree().create_tween()
+		new_tween.tween_property($Sprite2D, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
 	else:
-		$Tween.interpolate_property(
-			$Sprite,
-			"modulate",
-			$Sprite.modulate,
-			Color(1.0, 1.0, 1.0, 1.0),
-			0.5,
-			Tween.TRANS_LINEAR,
-			Tween.EASE_IN_OUT
-		)
-
-	$Tween.start()
+		var new_tween = get_tree().create_tween()
+		new_tween.tween_property($Sprite2D, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 
 func mouse_exit():
 	hover_mouse = false

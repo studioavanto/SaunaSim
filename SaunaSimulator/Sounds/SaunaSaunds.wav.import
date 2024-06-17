@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/SaunaSaunds.wav-d162f1daec1bf035b9ae47ba2c3bca0d.sample"
+type="AudioStreamWAV"
+uid="uid://bnegkpokucfsb"
+path="res://.godot/imported/SaunaSaunds.wav-d162f1daec1bf035b9ae47ba2c3bca0d.sample"
 
 [deps]
 
 source_file="res://Sounds/SaunaSaunds.wav"
-dest_files=[ "res://.import/SaunaSaunds.wav-d162f1daec1bf035b9ae47ba2c3bca0d.sample" ]
+dest_files=["res://.godot/imported/SaunaSaunds.wav-d162f1daec1bf035b9ae47ba2c3bca0d.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0
